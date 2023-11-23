@@ -1,0 +1,47 @@
+S -> Enunciativa | Interrogativa | Exclamativa | Exhortativa | Desiderativa | Dubitativa
+
+Enunciativa -> Simple | Compuesta | Copulativa | Predicativa | Personal | Impersonal | Activa | Pasiva
+Interrogativa -> InicioInterrogacion  Enunciativa | InterrogativaParcial FinalInterrogacion
+Exclamativa -> InicioExclamacion Exclamativo Enunciativa FinalExclamacion
+Exhortativa -> VerboImperativo Frase Punto
+Desiderativa -> InicioDesiderativo Frase Punto
+Dubitativa -> InicioDubitativo Enunciativa Punto
+InterrogativaParcial -> Interrogativo Verbo Sujeto
+
+
+Simple -> Sujeto Predicado
+Compuesta -> Simple Conjuncion Simple
+Copulativa -> Sujeto VerbCopulativo Atributo
+Predicativa -> Sujeto VerbPredicativo Complemento
+Personal -> Sujeto VerboConjudado Frase
+Impersonal -> VerbImpersonal Frase
+Activa -> Sujeto Verbo Complemento
+Pasiva -> Sujeto VerbSer VerboParti ComplementoPasivo
+
+ComplementoPasivo -> POR Sujeto
+Predicado -> Verbo Frase
+Sujeto -> DETERMINANTE Sustantivo | Sustantivo | PRONOMBRE
+Sustantivo -> SUSTANTIVO_SIMPLE | SUSTANTIVO_COMPUESTO | SUSTANTIVO_DERIVADO 
+
+InicioInterrogacion -> INTERROGACION_ABRIR
+FinalInterrogacion -> INTERROGACION_CERRAR
+InicioExclamacion -> EXCLAMACION_ABRIR
+FinalInterrogacion -> EXCLAMACION_CERRAR
+
+Exclamativo -> EXCLAMATIVO
+Interrogativo -> INTERROGATIVO
+
+VerbCopulativo -> VERBO_SER | VERBO_ESTAR | VERBO_PARECER
+VerbPredicativo -> Verbo
+VerbImpersonal -> VERBO_IMPERSONAL
+Verbo -> VERBO_SIMPLE | VERBO_CONJUGADO | VERBO_DERIVADO
+Participio -> VERBO_PARTICIPIO
+VerboImperativo -> VERBO_IMPERATIVO
+
+InicioDesiderativo -> DESIDERATIVO
+InicioDubitativo -> DUBITATIVO
+Atributo -> Sustantivo | ADJETIVO
+Complemento -> NOUN | ADJ | PREP Frase
+
+Frase -> Sustantivo | ADJ | ADV | PRON | PREP Frase | Frase CONJ Frase | ""
+Punto -> PUNTO
