@@ -1,0 +1,915 @@
+Terminals which are not used
+
+   EXCLAMATIVO
+
+
+Grammar
+
+    0 $accept: S $end
+
+    1 S: Oracion Punto
+
+    2 Oracion: Enunciativa
+    3        | Interrogativa
+    4        | Exclamativa
+    5        | Exhortativa
+    6        | Desiderativa
+    7        | Dubitativa
+
+    8 Enunciativa: Simple
+    9            | Compuesta
+   10            | Sujeto VerbCopulativo Atributo
+   11            | Sujeto Verbo Complemento
+   12            | VerbImpersonal Complemento
+   13            | Pasiva
+
+   14 Compuesta: Simple CONJUNCION Simple
+
+   15 Interrogativa: INTERROGACION_ABRIR Oracion INTERROGACION_CERRAR
+   16              | INTERROGATIVO Verbo Sujeto INTERROGACION_CERRAR
+
+   17 Exclamativa: EXCLAMACION_ABRIR Oracion EXCLAMACION_CERRAR
+
+   18 Exhortativa: VerboImperativo Complemento
+
+   19 Desiderativa: DESIDERATIVO Complemento
+
+   20 Dubitativa: DUBITATIVO Oracion
+
+   21 Pasiva: Sujeto VERBO_SER Participio ComplementoPasivo
+
+   22 Simple: Sujeto Verbo
+
+   23 Sujeto: DETERMINANTE Sustantivo
+   24       | Sustantivo
+   25       | PRONOMBRE
+
+   26 Sustantivo: SUSTANTIVO_SIMPLE
+   27           | SUSTANTIVO_COMPUESTO
+   28           | SUSTANTIVO_DERIVADO
+
+   29 VerbCopulativo: VERBO_SER
+   30               | VERBO_ESTAR
+   31               | VERBO_PARECER
+
+   32 VerbImpersonal: VERBO_IMPERSONAL
+
+   33 Verbo: VERBO_SIMPLE
+   34      | VERBO_CONJUGADO
+   35      | VERBO_DERIVADO
+
+   36 Participio: VERBO_PARTICIPIO
+
+   37 VerboImperativo: VERBO_IMPERATIVO
+
+   38 Atributo: Sustantivo
+   39         | Adjetivo
+
+   40 ComplementoPasivo: POR Sujeto
+
+   41 Complemento: Sustantivo
+   42            | Adjetivo
+   43            | Adverbio
+   44            | PREPOSICION Complemento
+
+   45 Adjetivo: ADJETIVO_SIMPLE
+   46         | ADJETIVO_DERIVADO
+
+   47 Adverbio: ADVERBIO_SIMPLE
+   48         | ADVERBIO_DERIVADO
+
+   49 Punto: PUNTO
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+DETERMINANTE (258) 23
+SUSTANTIVO_SIMPLE (259) 26
+SUSTANTIVO_COMPUESTO (260) 27
+SUSTANTIVO_DERIVADO (261) 28
+PRONOMBRE (262) 25
+VERBO_SER (263) 21 29
+VERBO_ESTAR (264) 30
+VERBO_PARECER (265) 31
+VERBO_SIMPLE (266) 33
+VERBO_CONJUGADO (267) 34
+VERBO_IMPERATIVO (268) 37
+VERBO_DERIVADO (269) 35
+VERBO_PARTICIPIO (270) 36
+VERBO_IMPERSONAL (271) 32
+ADJETIVO_SIMPLE (272) 45
+ADJETIVO_DERIVADO (273) 46
+ADVERBIO_SIMPLE (274) 47
+ADVERBIO_DERIVADO (275) 48
+PREPOSICION (276) 44
+CONJUNCION (277) 14
+INTERROGACION_ABRIR (278) 15
+INTERROGACION_CERRAR (279) 15 16
+EXCLAMACION_ABRIR (280) 17
+EXCLAMACION_CERRAR (281) 17
+INTERROGATIVO (282) 16
+EXCLAMATIVO (283)
+DESIDERATIVO (284) 19
+DUBITATIVO (285) 20
+PUNTO (286) 49
+POR (287) 40
+
+
+Nonterminals, with rules where they appear
+
+$accept (33)
+    on left: 0
+S (34)
+    on left: 1, on right: 0
+Oracion (35)
+    on left: 2 3 4 5 6 7, on right: 1 15 17 20
+Enunciativa (36)
+    on left: 8 9 10 11 12 13, on right: 2
+Compuesta (37)
+    on left: 14, on right: 9
+Interrogativa (38)
+    on left: 15 16, on right: 3
+Exclamativa (39)
+    on left: 17, on right: 4
+Exhortativa (40)
+    on left: 18, on right: 5
+Desiderativa (41)
+    on left: 19, on right: 6
+Dubitativa (42)
+    on left: 20, on right: 7
+Pasiva (43)
+    on left: 21, on right: 13
+Simple (44)
+    on left: 22, on right: 8 14
+Sujeto (45)
+    on left: 23 24 25, on right: 10 11 16 21 22 40
+Sustantivo (46)
+    on left: 26 27 28, on right: 23 24 38 41
+VerbCopulativo (47)
+    on left: 29 30 31, on right: 10
+VerbImpersonal (48)
+    on left: 32, on right: 12
+Verbo (49)
+    on left: 33 34 35, on right: 11 16 22
+Participio (50)
+    on left: 36, on right: 21
+VerboImperativo (51)
+    on left: 37, on right: 18
+Atributo (52)
+    on left: 38 39, on right: 10
+ComplementoPasivo (53)
+    on left: 40, on right: 21
+Complemento (54)
+    on left: 41 42 43 44, on right: 11 12 18 19 44
+Adjetivo (55)
+    on left: 45 46, on right: 39 42
+Adverbio (56)
+    on left: 47 48, on right: 43
+Punto (57)
+    on left: 49, on right: 1
+
+
+state 0
+
+    0 $accept: . S $end
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+    VERBO_IMPERATIVO      shift, and go to state 6
+    VERBO_IMPERSONAL      shift, and go to state 7
+    INTERROGACION_ABRIR   shift, and go to state 8
+    EXCLAMACION_ABRIR     shift, and go to state 9
+    INTERROGATIVO         shift, and go to state 10
+    DESIDERATIVO          shift, and go to state 11
+    DUBITATIVO            shift, and go to state 12
+
+    S                go to state 13
+    Oracion          go to state 14
+    Enunciativa      go to state 15
+    Compuesta        go to state 16
+    Interrogativa    go to state 17
+    Exclamativa      go to state 18
+    Exhortativa      go to state 19
+    Desiderativa     go to state 20
+    Dubitativa       go to state 21
+    Pasiva           go to state 22
+    Simple           go to state 23
+    Sujeto           go to state 24
+    Sustantivo       go to state 25
+    VerbImpersonal   go to state 26
+    VerboImperativo  go to state 27
+
+
+state 1
+
+   23 Sujeto: DETERMINANTE . Sustantivo
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+
+    Sustantivo  go to state 28
+
+
+state 2
+
+   26 Sustantivo: SUSTANTIVO_SIMPLE .
+
+    $default  reduce using rule 26 (Sustantivo)
+
+
+state 3
+
+   27 Sustantivo: SUSTANTIVO_COMPUESTO .
+
+    $default  reduce using rule 27 (Sustantivo)
+
+
+state 4
+
+   28 Sustantivo: SUSTANTIVO_DERIVADO .
+
+    $default  reduce using rule 28 (Sustantivo)
+
+
+state 5
+
+   25 Sujeto: PRONOMBRE .
+
+    $default  reduce using rule 25 (Sujeto)
+
+
+state 6
+
+   37 VerboImperativo: VERBO_IMPERATIVO .
+
+    $default  reduce using rule 37 (VerboImperativo)
+
+
+state 7
+
+   32 VerbImpersonal: VERBO_IMPERSONAL .
+
+    $default  reduce using rule 32 (VerbImpersonal)
+
+
+state 8
+
+   15 Interrogativa: INTERROGACION_ABRIR . Oracion INTERROGACION_CERRAR
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+    VERBO_IMPERATIVO      shift, and go to state 6
+    VERBO_IMPERSONAL      shift, and go to state 7
+    INTERROGACION_ABRIR   shift, and go to state 8
+    EXCLAMACION_ABRIR     shift, and go to state 9
+    INTERROGATIVO         shift, and go to state 10
+    DESIDERATIVO          shift, and go to state 11
+    DUBITATIVO            shift, and go to state 12
+
+    Oracion          go to state 29
+    Enunciativa      go to state 15
+    Compuesta        go to state 16
+    Interrogativa    go to state 17
+    Exclamativa      go to state 18
+    Exhortativa      go to state 19
+    Desiderativa     go to state 20
+    Dubitativa       go to state 21
+    Pasiva           go to state 22
+    Simple           go to state 23
+    Sujeto           go to state 24
+    Sustantivo       go to state 25
+    VerbImpersonal   go to state 26
+    VerboImperativo  go to state 27
+
+
+state 9
+
+   17 Exclamativa: EXCLAMACION_ABRIR . Oracion EXCLAMACION_CERRAR
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+    VERBO_IMPERATIVO      shift, and go to state 6
+    VERBO_IMPERSONAL      shift, and go to state 7
+    INTERROGACION_ABRIR   shift, and go to state 8
+    EXCLAMACION_ABRIR     shift, and go to state 9
+    INTERROGATIVO         shift, and go to state 10
+    DESIDERATIVO          shift, and go to state 11
+    DUBITATIVO            shift, and go to state 12
+
+    Oracion          go to state 30
+    Enunciativa      go to state 15
+    Compuesta        go to state 16
+    Interrogativa    go to state 17
+    Exclamativa      go to state 18
+    Exhortativa      go to state 19
+    Desiderativa     go to state 20
+    Dubitativa       go to state 21
+    Pasiva           go to state 22
+    Simple           go to state 23
+    Sujeto           go to state 24
+    Sustantivo       go to state 25
+    VerbImpersonal   go to state 26
+    VerboImperativo  go to state 27
+
+
+state 10
+
+   16 Interrogativa: INTERROGATIVO . Verbo Sujeto INTERROGACION_CERRAR
+
+    VERBO_SIMPLE     shift, and go to state 31
+    VERBO_CONJUGADO  shift, and go to state 32
+    VERBO_DERIVADO   shift, and go to state 33
+
+    Verbo  go to state 34
+
+
+state 11
+
+   19 Desiderativa: DESIDERATIVO . Complemento
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    ADJETIVO_SIMPLE       shift, and go to state 35
+    ADJETIVO_DERIVADO     shift, and go to state 36
+    ADVERBIO_SIMPLE       shift, and go to state 37
+    ADVERBIO_DERIVADO     shift, and go to state 38
+    PREPOSICION           shift, and go to state 39
+
+    Sustantivo   go to state 40
+    Complemento  go to state 41
+    Adjetivo     go to state 42
+    Adverbio     go to state 43
+
+
+state 12
+
+   20 Dubitativa: DUBITATIVO . Oracion
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+    VERBO_IMPERATIVO      shift, and go to state 6
+    VERBO_IMPERSONAL      shift, and go to state 7
+    INTERROGACION_ABRIR   shift, and go to state 8
+    EXCLAMACION_ABRIR     shift, and go to state 9
+    INTERROGATIVO         shift, and go to state 10
+    DESIDERATIVO          shift, and go to state 11
+    DUBITATIVO            shift, and go to state 12
+
+    Oracion          go to state 44
+    Enunciativa      go to state 15
+    Compuesta        go to state 16
+    Interrogativa    go to state 17
+    Exclamativa      go to state 18
+    Exhortativa      go to state 19
+    Desiderativa     go to state 20
+    Dubitativa       go to state 21
+    Pasiva           go to state 22
+    Simple           go to state 23
+    Sujeto           go to state 24
+    Sustantivo       go to state 25
+    VerbImpersonal   go to state 26
+    VerboImperativo  go to state 27
+
+
+state 13
+
+    0 $accept: S . $end
+
+    $end  shift, and go to state 45
+
+
+state 14
+
+    1 S: Oracion . Punto
+
+    PUNTO  shift, and go to state 46
+
+    Punto  go to state 47
+
+
+state 15
+
+    2 Oracion: Enunciativa .
+
+    $default  reduce using rule 2 (Oracion)
+
+
+state 16
+
+    9 Enunciativa: Compuesta .
+
+    $default  reduce using rule 9 (Enunciativa)
+
+
+state 17
+
+    3 Oracion: Interrogativa .
+
+    $default  reduce using rule 3 (Oracion)
+
+
+state 18
+
+    4 Oracion: Exclamativa .
+
+    $default  reduce using rule 4 (Oracion)
+
+
+state 19
+
+    5 Oracion: Exhortativa .
+
+    $default  reduce using rule 5 (Oracion)
+
+
+state 20
+
+    6 Oracion: Desiderativa .
+
+    $default  reduce using rule 6 (Oracion)
+
+
+state 21
+
+    7 Oracion: Dubitativa .
+
+    $default  reduce using rule 7 (Oracion)
+
+
+state 22
+
+   13 Enunciativa: Pasiva .
+
+    $default  reduce using rule 13 (Enunciativa)
+
+
+state 23
+
+    8 Enunciativa: Simple .
+   14 Compuesta: Simple . CONJUNCION Simple
+
+    CONJUNCION  shift, and go to state 48
+
+    $default  reduce using rule 8 (Enunciativa)
+
+
+state 24
+
+   10 Enunciativa: Sujeto . VerbCopulativo Atributo
+   11            | Sujeto . Verbo Complemento
+   21 Pasiva: Sujeto . VERBO_SER Participio ComplementoPasivo
+   22 Simple: Sujeto . Verbo
+
+    VERBO_SER        shift, and go to state 49
+    VERBO_ESTAR      shift, and go to state 50
+    VERBO_PARECER    shift, and go to state 51
+    VERBO_SIMPLE     shift, and go to state 31
+    VERBO_CONJUGADO  shift, and go to state 32
+    VERBO_DERIVADO   shift, and go to state 33
+
+    VerbCopulativo  go to state 52
+    Verbo           go to state 53
+
+
+state 25
+
+   24 Sujeto: Sustantivo .
+
+    $default  reduce using rule 24 (Sujeto)
+
+
+state 26
+
+   12 Enunciativa: VerbImpersonal . Complemento
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    ADJETIVO_SIMPLE       shift, and go to state 35
+    ADJETIVO_DERIVADO     shift, and go to state 36
+    ADVERBIO_SIMPLE       shift, and go to state 37
+    ADVERBIO_DERIVADO     shift, and go to state 38
+    PREPOSICION           shift, and go to state 39
+
+    Sustantivo   go to state 40
+    Complemento  go to state 54
+    Adjetivo     go to state 42
+    Adverbio     go to state 43
+
+
+state 27
+
+   18 Exhortativa: VerboImperativo . Complemento
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    ADJETIVO_SIMPLE       shift, and go to state 35
+    ADJETIVO_DERIVADO     shift, and go to state 36
+    ADVERBIO_SIMPLE       shift, and go to state 37
+    ADVERBIO_DERIVADO     shift, and go to state 38
+    PREPOSICION           shift, and go to state 39
+
+    Sustantivo   go to state 40
+    Complemento  go to state 55
+    Adjetivo     go to state 42
+    Adverbio     go to state 43
+
+
+state 28
+
+   23 Sujeto: DETERMINANTE Sustantivo .
+
+    $default  reduce using rule 23 (Sujeto)
+
+
+state 29
+
+   15 Interrogativa: INTERROGACION_ABRIR Oracion . INTERROGACION_CERRAR
+
+    INTERROGACION_CERRAR  shift, and go to state 56
+
+
+state 30
+
+   17 Exclamativa: EXCLAMACION_ABRIR Oracion . EXCLAMACION_CERRAR
+
+    EXCLAMACION_CERRAR  shift, and go to state 57
+
+
+state 31
+
+   33 Verbo: VERBO_SIMPLE .
+
+    $default  reduce using rule 33 (Verbo)
+
+
+state 32
+
+   34 Verbo: VERBO_CONJUGADO .
+
+    $default  reduce using rule 34 (Verbo)
+
+
+state 33
+
+   35 Verbo: VERBO_DERIVADO .
+
+    $default  reduce using rule 35 (Verbo)
+
+
+state 34
+
+   16 Interrogativa: INTERROGATIVO Verbo . Sujeto INTERROGACION_CERRAR
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+
+    Sujeto      go to state 58
+    Sustantivo  go to state 25
+
+
+state 35
+
+   45 Adjetivo: ADJETIVO_SIMPLE .
+
+    $default  reduce using rule 45 (Adjetivo)
+
+
+state 36
+
+   46 Adjetivo: ADJETIVO_DERIVADO .
+
+    $default  reduce using rule 46 (Adjetivo)
+
+
+state 37
+
+   47 Adverbio: ADVERBIO_SIMPLE .
+
+    $default  reduce using rule 47 (Adverbio)
+
+
+state 38
+
+   48 Adverbio: ADVERBIO_DERIVADO .
+
+    $default  reduce using rule 48 (Adverbio)
+
+
+state 39
+
+   44 Complemento: PREPOSICION . Complemento
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    ADJETIVO_SIMPLE       shift, and go to state 35
+    ADJETIVO_DERIVADO     shift, and go to state 36
+    ADVERBIO_SIMPLE       shift, and go to state 37
+    ADVERBIO_DERIVADO     shift, and go to state 38
+    PREPOSICION           shift, and go to state 39
+
+    Sustantivo   go to state 40
+    Complemento  go to state 59
+    Adjetivo     go to state 42
+    Adverbio     go to state 43
+
+
+state 40
+
+   41 Complemento: Sustantivo .
+
+    $default  reduce using rule 41 (Complemento)
+
+
+state 41
+
+   19 Desiderativa: DESIDERATIVO Complemento .
+
+    $default  reduce using rule 19 (Desiderativa)
+
+
+state 42
+
+   42 Complemento: Adjetivo .
+
+    $default  reduce using rule 42 (Complemento)
+
+
+state 43
+
+   43 Complemento: Adverbio .
+
+    $default  reduce using rule 43 (Complemento)
+
+
+state 44
+
+   20 Dubitativa: DUBITATIVO Oracion .
+
+    $default  reduce using rule 20 (Dubitativa)
+
+
+state 45
+
+    0 $accept: S $end .
+
+    $default  accept
+
+
+state 46
+
+   49 Punto: PUNTO .
+
+    $default  reduce using rule 49 (Punto)
+
+
+state 47
+
+    1 S: Oracion Punto .
+
+    $default  reduce using rule 1 (S)
+
+
+state 48
+
+   14 Compuesta: Simple CONJUNCION . Simple
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+
+    Simple      go to state 60
+    Sujeto      go to state 61
+    Sustantivo  go to state 25
+
+
+state 49
+
+   21 Pasiva: Sujeto VERBO_SER . Participio ComplementoPasivo
+   29 VerbCopulativo: VERBO_SER .
+
+    VERBO_PARTICIPIO  shift, and go to state 62
+
+    $default  reduce using rule 29 (VerbCopulativo)
+
+    Participio  go to state 63
+
+
+state 50
+
+   30 VerbCopulativo: VERBO_ESTAR .
+
+    $default  reduce using rule 30 (VerbCopulativo)
+
+
+state 51
+
+   31 VerbCopulativo: VERBO_PARECER .
+
+    $default  reduce using rule 31 (VerbCopulativo)
+
+
+state 52
+
+   10 Enunciativa: Sujeto VerbCopulativo . Atributo
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    ADJETIVO_SIMPLE       shift, and go to state 35
+    ADJETIVO_DERIVADO     shift, and go to state 36
+
+    Sustantivo  go to state 64
+    Atributo    go to state 65
+    Adjetivo    go to state 66
+
+
+state 53
+
+   11 Enunciativa: Sujeto Verbo . Complemento
+   22 Simple: Sujeto Verbo .
+
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    ADJETIVO_SIMPLE       shift, and go to state 35
+    ADJETIVO_DERIVADO     shift, and go to state 36
+    ADVERBIO_SIMPLE       shift, and go to state 37
+    ADVERBIO_DERIVADO     shift, and go to state 38
+    PREPOSICION           shift, and go to state 39
+
+    $default  reduce using rule 22 (Simple)
+
+    Sustantivo   go to state 40
+    Complemento  go to state 67
+    Adjetivo     go to state 42
+    Adverbio     go to state 43
+
+
+state 54
+
+   12 Enunciativa: VerbImpersonal Complemento .
+
+    $default  reduce using rule 12 (Enunciativa)
+
+
+state 55
+
+   18 Exhortativa: VerboImperativo Complemento .
+
+    $default  reduce using rule 18 (Exhortativa)
+
+
+state 56
+
+   15 Interrogativa: INTERROGACION_ABRIR Oracion INTERROGACION_CERRAR .
+
+    $default  reduce using rule 15 (Interrogativa)
+
+
+state 57
+
+   17 Exclamativa: EXCLAMACION_ABRIR Oracion EXCLAMACION_CERRAR .
+
+    $default  reduce using rule 17 (Exclamativa)
+
+
+state 58
+
+   16 Interrogativa: INTERROGATIVO Verbo Sujeto . INTERROGACION_CERRAR
+
+    INTERROGACION_CERRAR  shift, and go to state 68
+
+
+state 59
+
+   44 Complemento: PREPOSICION Complemento .
+
+    $default  reduce using rule 44 (Complemento)
+
+
+state 60
+
+   14 Compuesta: Simple CONJUNCION Simple .
+
+    $default  reduce using rule 14 (Compuesta)
+
+
+state 61
+
+   22 Simple: Sujeto . Verbo
+
+    VERBO_SIMPLE     shift, and go to state 31
+    VERBO_CONJUGADO  shift, and go to state 32
+    VERBO_DERIVADO   shift, and go to state 33
+
+    Verbo  go to state 69
+
+
+state 62
+
+   36 Participio: VERBO_PARTICIPIO .
+
+    $default  reduce using rule 36 (Participio)
+
+
+state 63
+
+   21 Pasiva: Sujeto VERBO_SER Participio . ComplementoPasivo
+
+    POR  shift, and go to state 70
+
+    ComplementoPasivo  go to state 71
+
+
+state 64
+
+   38 Atributo: Sustantivo .
+
+    $default  reduce using rule 38 (Atributo)
+
+
+state 65
+
+   10 Enunciativa: Sujeto VerbCopulativo Atributo .
+
+    $default  reduce using rule 10 (Enunciativa)
+
+
+state 66
+
+   39 Atributo: Adjetivo .
+
+    $default  reduce using rule 39 (Atributo)
+
+
+state 67
+
+   11 Enunciativa: Sujeto Verbo Complemento .
+
+    $default  reduce using rule 11 (Enunciativa)
+
+
+state 68
+
+   16 Interrogativa: INTERROGATIVO Verbo Sujeto INTERROGACION_CERRAR .
+
+    $default  reduce using rule 16 (Interrogativa)
+
+
+state 69
+
+   22 Simple: Sujeto Verbo .
+
+    $default  reduce using rule 22 (Simple)
+
+
+state 70
+
+   40 ComplementoPasivo: POR . Sujeto
+
+    DETERMINANTE          shift, and go to state 1
+    SUSTANTIVO_SIMPLE     shift, and go to state 2
+    SUSTANTIVO_COMPUESTO  shift, and go to state 3
+    SUSTANTIVO_DERIVADO   shift, and go to state 4
+    PRONOMBRE             shift, and go to state 5
+
+    Sujeto      go to state 72
+    Sustantivo  go to state 25
+
+
+state 71
+
+   21 Pasiva: Sujeto VERBO_SER Participio ComplementoPasivo .
+
+    $default  reduce using rule 21 (Pasiva)
+
+
+state 72
+
+   40 ComplementoPasivo: POR Sujeto .
+
+    $default  reduce using rule 40 (ComplementoPasivo)

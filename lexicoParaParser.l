@@ -1,6 +1,5 @@
 %{
 #include <stdio.h>
-#include <conio.h>
 #include "parser.h"
 %}
 
@@ -76,6 +75,5 @@ int main()
   else
       yyparse();
   fclose(yyin);
-  getch();
   return 0;
 }

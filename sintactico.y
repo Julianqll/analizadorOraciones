@@ -1,175 +1,85 @@
 %{
-/* Código C para la inclusión en la parte superior del archivo generado */
-#include <stdio.h>
-#include <stdlib.h>
-
-/* Definiciones de tokens, posiblemente importadas desde un archivo de encabezado */
+/* Bison declarations */
 %}
 
-%token SUSTANTIVO ADJETIVO VERBO PRONOMBRE PREPOSICION INTERROGACION EXCLAMACION PUNTO
-%token COMA PUNTO_Y_COMA DOS_PUNTOS PARENTESIS_ABRIR PARENTESIS_CERRAR
-%token CORCHETE_ABRIR CORCHETE_CERRAR LLAVE_ABRIR LLAVE_CERRAR GUION GUION_DOBLE PUNTOS_SUSPENSIVOS
-%token COMILLAS APOSTROFE CONJ COPULA VERBOACTIVO VERBOSER PARTICIPIOPASADO
-%token OJALA TALVEZ PUEDA QUISIERA DESEARIA
+%token DETERMINANTE SUSTANTIVO_SIMPLE SUSTANTIVO_COMPUESTO SUSTANTIVO_DERIVADO
+%token PRONOMBRE VERBO_SER VERBO_ESTAR VERBO_PARECER VERBO_SIMPLE VERBO_CONJUGADO VERBO_IMPERATIVO
+%token VERBO_DERIVADO VERBO_PARTICIPIO VERBO_IMPERSONAL ADJETIVO_SIMPLE ADJETIVO_DERIVADO ADVERBIO_SIMPLE ADVERBIO_DERIVADO PREPOSICION
+%token CONJUNCION INTERROGACION_ABRIR INTERROGACION_CERRAR EXCLAMACION_ABRIR 
+%token EXCLAMACION_CERRAR INTERROGATIVO EXCLAMATIVO DESIDERATIVO DUBITATIVO PUNTO POR
+
+%start S
 
 %%
 
-/* Aquí van las reglas de producción de la gramática */
+S : Oracion Punto ;
 
-O:
-    OSimple PUNTO
-  | OCompuesta
-  ;
+Oracion : Enunciativa
+        | Interrogativa
+        | Exclamativa
+        | Exhortativa
+        | Desiderativa
+        | Dubitativa ;
 
-OSimple:
-    Enunciativa
-  | Interrogativa
-  | Exclamativa
-  | Imperativa
-  | Exhortativa
-  | Desiderativa
-  | Optativa
-  | Dubitativa
-  ;
+Enunciativa : Simple 
+            | Compuesta
+            | Sujeto VerbCopulativo Atributo
+            | Sujeto Verbo Complemento
+            | VerbImpersonal Complemento
+            | Pasiva ;
 
-OCompuesta:
-    O CONJ O
-  | O CONJ O OCompuesta
-  ;
+Compuesta : Simple CONJUNCION Simple ;
 
-Enunciativa:
-    S P
-  ;
+Interrogativa : INTERROGACION_ABRIR Oracion INTERROGACION_CERRAR
+              | INTERROGATIVO Verbo Sujeto INTERROGACION_CERRAR ;
 
-Interrogativa:
-    INTERROGACION_ABRIR S P INTERROGACION_CERRAR
-  ;
+Exclamativa : EXCLAMACION_ABRIR Oracion EXCLAMACION_CERRAR ;
 
-Exclamativa:
-    EXCLAMACION_ABRIR S P EXCLAMACION_CERRAR
-  ;
+Exhortativa : VerboImperativo Complemento ;
 
-Imperativa:
-    VERBO Objeto PUNTO
-  ;
+Desiderativa : DESIDERATIVO Complemento ;
 
-Exhortativa:
-    VERBO Objeto PUNTO
-  ;
+Dubitativa : DUBITATIVO Oracion ;
 
-Desiderativa:
-    OJALA S P PUNTO
-  ;
+Pasiva : Sujeto VERBO_SER Participio ComplementoPasivo ;
 
-Optativa:
-    S P Puntuacion PalabraClave PUNTO
-  ;
+Simple : Sujeto Verbo ;
 
-Dubitativa:
-    TALVEZ S P PUNTO
-  ;
+Sujeto : DETERMINANTE Sustantivo 
+       | Sustantivo 
+       | PRONOMBRE ;
 
-S:
-    Nominal
-  | /* empty */
-  ;
+Sustantivo : SUSTANTIVO_SIMPLE 
+           | SUSTANTIVO_COMPUESTO 
+           | SUSTANTIVO_DERIVADO ;
 
-Nominal:
-    PalabraSujeto
-  | PalabraSujeto Conector PalabraSujeto
-  ;
+VerbCopulativo : VERBO_SER 
+               | VERBO_ESTAR 
+               | VERBO_PARECER ;
 
-P:
-    Copulativas
-  | Predicativas
-  ;
+VerbImpersonal : VERBO_IMPERSONAL ;
 
-Copulativas:
-    COPULA ADJETIVO
-  | COPULA SUSTANTIVO
-  | COPULA S
-  ;
+Verbo : VERBO_SIMPLE 
+      | VERBO_CONJUGADO 
+      | VERBO_DERIVADO ;
 
-Predicativas:
-    V C*
-  | VERBOSER PARTICIPIOPASADO POR S
-  ;
+Participio : VERBO_PARTICIPIO ;
 
-V:
-    VERBOACTIVO C*
-  | VERBOSER PARTICIPIOPASADO POR S
-  ;
+VerboImperativo : VERBO_IMPERATIVO ;
 
-C:
-    CD
-  | CI
-  | CC
-  ;
+Atributo : Sustantivo 
+         | Adjetivo ;
 
-CD:
-    SUSTANTIVO
-  | PRONOMBRE
-  ;
+ComplementoPasivo : POR Sujeto ;
 
-CI:
-    PREPOSICION SUSTANTIVO
-  | PREPOSICION PRONOMBRE
-  ;
+Complemento : Sustantivo
+            | Adjetivo 
+            | Adverbio
+            | PREPOSICION Complemento ;
 
-CC:
-    PREPOSICION SUSTANTIVO
-  | PREPOSICION ADJETIVO
-  | PREPOSICION ADVERBIO
-  ;
+Adjetivo : ADJETIVO_SIMPLE 
+       | ADJETIVO_DERIVADO ; 
 
-ConectorCompuesto:
-    CONJ
-  ;
-
-Conector:
-    CONJ
-  ;
-
-PalabraClave:
-    PUEDA
-  | QUISIERA
-  | DESEARIA
-  ;
-
-PalabraSujeto:
-    SUSTANTIVO
-  | PRONOMBRE
-  ;
-
-PalabraPredicado:
-    VERBO
-  | ADJETIVO VERBO
-  ;
-
-Objeto:
-    SUSTANTIVO
-  | PRONOMBRE
-  ;
-
-Puntuacion:
-    COMA
-  | PUNTO_Y_COMA
-  | INTERROGACION_ABRIR
-  | INTERROGACION_CERRAR
-  | EXCLAMACION_ABRIR
-  | EXCLAMACION_CERRAR
-  ;
-
-%%
-
-/* Código C adicional para el archivo generado, como subrutinas auxiliares */
-
-int main(int argc, char **argv) {
-    // Inicialización y llamada al analizador sintáctico
-    yyparse();
-    return 0;
-}
-
-void yyerror(const char *s) {
-    fprintf(stderr, "Error de análisis: %s\\n", s);
-}
+Adverbio : ADVERBIO_SIMPLE
+       | ADVERBIO_DERIVADO ;
+Punto : PUNTO ;
