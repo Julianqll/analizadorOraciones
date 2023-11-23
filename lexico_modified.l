@@ -88,9 +88,94 @@ Dubita              "Creo"
 
 extern puntoEncontrado;
 void yyerror (const char *s) {
+    if (!adverbioDerivadoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token ADVERBIO DERIVADO\n");
+    }
+    if (!adverbioSimpleEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token ADVERBIO SIMPLE\n");
+    }
+    if (!adjetivoDerivadoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token ADJETIVO DERIVADO\n");
+    }
+    if (!adjetivoSimpleEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token ADJETIVO SIMPLE\n");
+    }
+    if (!preposicionEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token PREPOSICION\n");
+    }
+    if (!porEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token POR\n");
+    }
+    if (!verboImperativoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO IMPERATIVO\n");
+    }
+    if (!verboParticipioEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO PARTICIPIO\n");
+    }
+    if (!verboDerivadoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO DERIVADO\n");
+    }
+    if (!verboConjugadoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO CONJUGADO\n");
+    }
+    if (!verboSimpleEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO SIMPLE\n");
+    }
+    if (!verboImpersonalEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO IMPERSONAL\n");
+    }
+    if (!verboSerEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO SER\n");
+    }
+    if (!verboEstarEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO ESTAR\n");
+    }
+    if (!verboParecerEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token VERBO PARECER\n");
+    }
+    if (!sustantivoSimpleEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token SUSTANTIVO SIMPLE\n");
+    }
+    if (!sustantivoCompuestoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token SUSTANTIVO COMPUESTO\n");
+    }
+    if (!sustantivoDerivadoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token SUSTANTIVO DERIVADO\n");
+    }
+    if (!determinanteEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token DETERMINANTE\n");
+    }
+    if (!pronombreEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token PRONOMBRE\n");
+    }
+    if (!desiderativoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token DESIDERATIVO\n");
+    }
+    if (!dubitativoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token DUBITATIVO\n");
+    }
+    if (!interrogacionAbrirEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token INTERROGACION ABRIR\n");
+    }
+    if (!interrogativoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token INTERROGATIVO\n");
+    }
+    if (!interrogacionCerrarEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token INTERROGACION CERRAR\n");
+    }
+    if (!exclamacionAbrirEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token EXCLAMACION ABRIR\n");
+    }
+    if (!exclamacionCerrarEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token EXCLAMACION CERRAR\n");
+    }
+    if (!conjuncionEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token CONJUNCION\n");
+    }
     if (!puntoEncontrado) {
         fprintf(stderr, "Error de sintaxis: Falta token PUNTO\n");
-    } else {
+    }
+    else {
         fprintf(stderr, "%s\n", s);
     }
 }
