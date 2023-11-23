@@ -2749,7 +2749,35 @@ void yyfree (void * ptr )
 
 #line 87 "lexico_modified.l"
 
-
+extern puntoEncontrado;
+extern adverbioDerivadoEncontrado;
+extern adverbioSimpleEncontrado;
+extern adjetivoDerivadoEncontrado;
+extern adjetivoSimpleEncontrado;
+extern preposicionEncontrado;
+extern porEncontrado;
+extern verboImperativoEncontrado;
+extern verboParticipioEncontrado;  
+extern verboDerivadoEncontrado;  
+extern verboConjugadoEncontrado;  
+extern verboSimpleEncontrado;  
+extern verboImpersonalEncontrado;  
+extern verboSerEncontrado;  
+extern verboEstarEncontrado;  
+extern verboParecerEncontrado;  
+extern sustantivoSimpleEncontrado;
+extern sustantivoCompuestoEncontrado;
+extern sustantivoDerivadoEncontrado;  
+extern determinanteEncontrado;
+extern pronombreEncontrado;
+extern desiderativoEncontrado;      
+extern dubitativoEncontrado;
+extern interrogacionAbrirEncontrado;
+extern interrogativoEncontrado;
+extern interrogacionCerrarEncontrado;
+extern exclamacionAbrirEncontrado;
+extern exclamacionCerrarEncontrado;
+extern conjuncionEncontrado;
 extern puntoEncontrado;
 void yyerror (const char *s) {
     if (!adverbioDerivadoEncontrado) {
