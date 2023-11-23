@@ -1,6 +1,9 @@
 %{
 /* Bison declarations */
+#include <stdbool.h>
+bool puntoEncontrado = false;
 %}
+%define "parse.error" "verbose"
 
 %token DETERMINANTE SUSTANTIVO_SIMPLE SUSTANTIVO_COMPUESTO SUSTANTIVO_DERIVADO
 %token PRONOMBRE VERBO_SER VERBO_ESTAR VERBO_PARECER VERBO_SIMPLE VERBO_CONJUGADO VERBO_IMPERATIVO
@@ -12,9 +15,14 @@
 
 %%
 
-S : Oracion Punto { printf("Regla utilizada: S -> Oracion Punto ;\n"); };
+S : Oracion Punto { 
+       printf("Regla utilizada: S -> Oracion Punto ;\n"); 
+       };
 
 Oracion : Enunciativa
+       { 
+       printf("Regla utilizada: Oracion -> Enunciativa ;\n"); 
+       }
         | Interrogativa
         | Exclamativa
         | Exhortativa
@@ -22,9 +30,18 @@ Oracion : Enunciativa
         | Dubitativa ;
 
 Enunciativa : Simple 
+       { 
+       printf("Regla utilizada: Enunciativa -> Simple ;\n"); 
+       }
             | Compuesta
             | Sujeto VerbCopulativo Atributo
+       { 
+       printf("Regla utilizada: Enunciativa -> Sujeto VerbCopulativo Atributo ;\n"); 
+       }
             | Sujeto Verbo Complemento
+       { 
+       printf("Regla utilizada: Enunciativa -> Sujeto Verbo Complemento ;\n"); 
+       }
             | VerbImpersonal Complemento
             | Pasiva ;
 
@@ -47,13 +64,19 @@ Simple : Sujeto Verbo { printf("Regla utilizada: Simple -> Sujeto Verbo ;\n"); }
 
 Sujeto : DETERMINANTE Sustantivo 
        | Sustantivo 
-       | PRONOMBRE ;
+       | PRONOMBRE 
+       { 
+       printf("Regla utilizada: Sujeto -> PRONOMBRE ;\n"); 
+       };
 
 Sustantivo : SUSTANTIVO_SIMPLE 
            | SUSTANTIVO_COMPUESTO 
            | SUSTANTIVO_DERIVADO ;
 
 VerbCopulativo : VERBO_SER 
+       { 
+       printf("Regla utilizada: VerbCopulativo -> VERBO_SER ;\n"); 
+       }
                | VERBO_ESTAR 
                | VERBO_PARECER ;
 
@@ -68,7 +91,9 @@ Participio : VERBO_PARTICIPIO { printf("Regla utilizada: Participio -> VERBO_PAR
 VerboImperativo : VERBO_IMPERATIVO { printf("Regla utilizada: VerboImperativo -> VERBO_IMPERATIVO ;\n"); };
 
 Atributo : Sustantivo 
-         | Adjetivo ;
+         | Adjetivo        { 
+       printf("Regla utilizada: Atributo -> Adjetivo ;\n"); 
+       };
 
 ComplementoPasivo : POR Sujeto { printf("Regla utilizada: ComplementoPasivo -> POR Sujeto ;\n"); };
 
@@ -78,9 +103,13 @@ Complemento : Sustantivo
             | PREPOSICION Complemento ;
 
 Adjetivo : ADJETIVO_SIMPLE 
+{ 
+       printf("Regla utilizada: Adjetivo -> ADJETIVO_SIMPLE ;\n"); 
+       }
        | ADJETIVO_DERIVADO ; 
 
 Adverbio : ADVERBIO_SIMPLE
        | ADVERBIO_DERIVADO ;
 
-Punto : PUNTO { printf("Regla utilizada: Punto -> PUNTO ;\n"); };
+Punto : PUNTO { 
+       puntoEncontrado = true; printf("Regla utilizada: Punto -> PUNTO;\n"); };

@@ -137,6 +137,8 @@
 #line 1 "sintactico_modified.y"
 
 /* Bison declarations */
+#include <stdbool.h>
+bool puntoEncontrado = false;
 
 
 /* Enabling traces.  */
@@ -170,7 +172,7 @@ typedef int YYSTYPE;
 
 
 /* Line 216 of yacc.c.  */
-#line 174 "parser_modified.c"
+#line 176 "parser_modified.c"
 
 #ifdef short
 # undef short
@@ -471,12 +473,12 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    15,    15,    17,    18,    19,    20,    21,    22,    24,
-      25,    26,    27,    28,    29,    31,    33,    34,    36,    38,
-      40,    42,    44,    46,    48,    49,    50,    52,    53,    54,
-      56,    57,    58,    60,    62,    63,    64,    66,    68,    70,
-      71,    73,    75,    76,    77,    78,    80,    81,    83,    84,
-      86
+       0,    18,    18,    22,    26,    27,    28,    29,    30,    32,
+      36,    37,    41,    45,    46,    48,    50,    51,    53,    55,
+      57,    59,    61,    63,    65,    66,    67,    72,    73,    74,
+      76,    80,    81,    83,    85,    86,    87,    89,    91,    93,
+      94,    98,   100,   101,   102,   103,   105,   109,   111,   112,
+     114
 };
 #endif
 
@@ -1437,73 +1439,132 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 15 "sintactico_modified.y"
-    { printf("Regla utilizada: S -> Oracion Punto ;\n"); ;}
+#line 18 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: S -> Oracion Punto ;\n"); 
+       ;}
+    break;
+
+  case 3:
+#line 23 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Oracion -> Enunciativa ;\n"); 
+       ;}
+    break;
+
+  case 9:
+#line 33 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Enunciativa -> Simple ;\n"); 
+       ;}
+    break;
+
+  case 11:
+#line 38 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Enunciativa -> Sujeto VerbCopulativo Atributo ;\n"); 
+       ;}
+    break;
+
+  case 12:
+#line 42 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Enunciativa -> Sujeto Verbo Complemento ;\n"); 
+       ;}
     break;
 
   case 15:
-#line 31 "sintactico_modified.y"
+#line 48 "sintactico_modified.y"
     { printf("Regla utilizada: Compuesta -> Simple CONJUNCION Simple ;\n"); ;}
     break;
 
   case 18:
-#line 36 "sintactico_modified.y"
+#line 53 "sintactico_modified.y"
     { printf("Regla utilizada: Exclamativa -> EXCLAMACION_ABRIR Oracion EXCLAMACION_CERRAR ;\n"); ;}
     break;
 
   case 19:
-#line 38 "sintactico_modified.y"
+#line 55 "sintactico_modified.y"
     { printf("Regla utilizada: Exhortativa -> VerboImperativo Complemento ;\n"); ;}
     break;
 
   case 20:
-#line 40 "sintactico_modified.y"
+#line 57 "sintactico_modified.y"
     { printf("Regla utilizada: Desiderativa -> DESIDERATIVO Complemento ;\n"); ;}
     break;
 
   case 21:
-#line 42 "sintactico_modified.y"
+#line 59 "sintactico_modified.y"
     { printf("Regla utilizada: Dubitativa -> DUBITATIVO Oracion ;\n"); ;}
     break;
 
   case 22:
-#line 44 "sintactico_modified.y"
+#line 61 "sintactico_modified.y"
     { printf("Regla utilizada: Pasiva -> Sujeto VERBO_SER Participio ComplementoPasivo ;\n"); ;}
     break;
 
   case 23:
-#line 46 "sintactico_modified.y"
+#line 63 "sintactico_modified.y"
     { printf("Regla utilizada: Simple -> Sujeto Verbo ;\n"); ;}
     break;
 
+  case 26:
+#line 68 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Sujeto -> PRONOMBRE ;\n"); 
+       ;}
+    break;
+
+  case 30:
+#line 77 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: VerbCopulativo -> VERBO_SER ;\n"); 
+       ;}
+    break;
+
   case 33:
-#line 60 "sintactico_modified.y"
+#line 83 "sintactico_modified.y"
     { printf("Regla utilizada: VerbImpersonal -> VERBO_IMPERSONAL ;\n"); ;}
     break;
 
   case 37:
-#line 66 "sintactico_modified.y"
+#line 89 "sintactico_modified.y"
     { printf("Regla utilizada: Participio -> VERBO_PARTICIPIO ;\n"); ;}
     break;
 
   case 38:
-#line 68 "sintactico_modified.y"
+#line 91 "sintactico_modified.y"
     { printf("Regla utilizada: VerboImperativo -> VERBO_IMPERATIVO ;\n"); ;}
     break;
 
+  case 40:
+#line 94 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Atributo -> Adjetivo ;\n"); 
+       ;}
+    break;
+
   case 41:
-#line 73 "sintactico_modified.y"
+#line 98 "sintactico_modified.y"
     { printf("Regla utilizada: ComplementoPasivo -> POR Sujeto ;\n"); ;}
     break;
 
+  case 46:
+#line 106 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: Adjetivo -> ADJETIVO_SIMPLE ;\n"); 
+       ;}
+    break;
+
   case 50:
-#line 86 "sintactico_modified.y"
-    { printf("Regla utilizada: Punto -> PUNTO ;\n"); ;}
+#line 114 "sintactico_modified.y"
+    { 
+       puntoEncontrado = true; printf("Regla utilizada: Punto -> PUNTO;\n"); ;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1507 "parser_modified.c"
+#line 1568 "parser_modified.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);

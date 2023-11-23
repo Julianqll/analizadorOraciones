@@ -1,5 +1,7 @@
 %{
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "parser.h"
 %}
 
@@ -84,6 +86,14 @@ Dubita              "Creo"
 
 %%
 
+extern puntoEncontrado;
+void yyerror (const char *s) {
+    if (!puntoEncontrado) {
+        fprintf(stderr, "Error de sintaxis: Falta token PUNTO\n");
+    } else {
+        fprintf(stderr, "%s\n", s);
+    }
+}
 int main()
 {
   char NomArch[30];
