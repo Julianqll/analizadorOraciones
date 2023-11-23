@@ -144,10 +144,10 @@ Adjetivo : ADJETIVO_SIMPLE
 { 
        printf("Regla utilizada: Adjetivo -> ADJETIVO_SIMPLE ;\n"); 
        }
-       | ADJETIVO_DERIVADO ; 
-{ 
+       | ADJETIVO_DERIVADO 
+       { 
        printf("Regla utilizada: Adjetivo -> ADJETIVO_DERIVADO ;\n"); 
-       }
+       };
 Adverbio : ADVERBIO_SIMPLE
 { 
        printf("Regla utilizada: Adverbio -> ADVERBIO_SIMPLE ;\n"); 
