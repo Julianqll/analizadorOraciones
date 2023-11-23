@@ -1,39 +1,6 @@
 %{
 #include <stdio.h>
-
-#define SUSTANTIVO_DERIVADO   1
-#define SUSTANTIVO_COMPUESTO  2
-#define SUSTANTIVO_SIMPLE     3
-#define VERBO_DERIVADO        4
-#define VERBO_CONJUGADO       5
-#define VERBO_SIMPLE          6
-#define ADJETIVO_DERIVADO     7
-#define ADJETIVO_SIMPLE       8
-#define ADVERBIO_DERIVADO     9
-#define ADVERBIO_SIMPLE       10
-#define PREPOSICION           11
-#define CONJUNCION            12
-#define DETERMINANTE          13
-#define INTERJECCION          14
-#define COMA                  15
-#define PUNTO                 16
-#define PUNTO_Y_COMA          17
-#define INTERROGACION_ABRIR   18
-#define INTERROGACION_CERRAR  19
-#define EXCLAMACION_ABRIR     20
-#define EXCLAMACION_CERRAR    21
-#define PRONOMBRE 22
-#define VERBO_SER 23
-#define VERBO_ESTAR 24
-#define VERBO_PARECER 25
-#define VERBO_IMPERATIVO 26
-#define VERBO_PARTICIPIO 27
-#define VERBO_IMPERSONAL 28
-#define INTERROGATIVO 29
-#define EXCLAMATIVO 30
-#define DESIDERATIVO 31
-#define DUBITATIVO 32
-#define POR 33
+#include "parser.h"
 %}
 
 %option noyywrap
@@ -95,7 +62,6 @@ Dubita              "Creo"
 {Prep}                                     { return PREPOSICION; }
 {Conj}                                     { return CONJUNCION; }
 {Det}                                      { return DETERMINANTE; }
-{Interj}                                   { return INTERJECCION; }
 {Pron}                                      { return PRONOMBRE; }
 {VerbSer}       {return VERBO_SER; }
 {VerbEstar}      {return VERBO_ESTAR; }
@@ -110,9 +76,7 @@ Dubita              "Creo"
 {Por}               {return POR;}
 
 
-","                                        { return COMA; }
 "."                                        { return PUNTO; }
-";"                                        { return PUNTO_Y_COMA; }
 "¿"                                        { return INTERROGACION_ABRIR; }
 "?"                                        { return INTERROGACION_CERRAR; }
 "¡"                                        { return EXCLAMACION_ABRIR; }
@@ -122,15 +86,13 @@ Dubita              "Creo"
 
 int main()
 {
-  int token;
   char NomArch[30];
   printf("Ingrese nombre de archivo: ");
   gets(NomArch);
   if ((yyin = fopen(NomArch, "rt")) == NULL)  /*yyin:variable que apunta al archivo fuente */
       printf("\nNo se puede abrir el archivo: %s\n", NomArch);
   else
-      while((token=yylex())>0)
-        printf("TOKEN = %d LEXEMA = %s \n",token,yytext);
+      yyparse();
   fclose(yyin);
   return 0;
 }
