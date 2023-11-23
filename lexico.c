@@ -1,6 +1,6 @@
-#line 1 "lexico_vjulian.c"
+#line 1 "lexico.c"
 
-#line 3 "lexico_vjulian.c"
+#line 3 "lexico.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -1258,14 +1258,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lexico.l"
-#line 2 "lexico.l"
+#line 1 "lexico_modified.l"
+#line 2 "lexico_modified.l"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "parser.h"
-#line 1267 "lexico_vjulian.c"
-#line 1268 "lexico_vjulian.c"
+#line 1267 "lexico.c"
+#line 1268 "lexico.c"
 
 #define INITIAL 0
 
@@ -1482,9 +1482,9 @@ YY_DECL
 		}
 
 	{
-#line 40 "lexico.l"
+#line 40 "lexico_modified.l"
 
-#line 1487 "lexico_vjulian.c"
+#line 1487 "lexico.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1544,205 +1544,205 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 41 "lexico.l"
+#line 41 "lexico_modified.l"
 {;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 42 "lexico.l"
+#line 42 "lexico_modified.l"
 { return SUSTANTIVO_DERIVADO; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 43 "lexico.l"
+#line 43 "lexico_modified.l"
 { return SUSTANTIVO_DERIVADO; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 44 "lexico.l"
+#line 44 "lexico_modified.l"
 { return SUSTANTIVO_DERIVADO; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 45 "lexico.l"
+#line 45 "lexico_modified.l"
 { return SUSTANTIVO_DERIVADO; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 46 "lexico.l"
+#line 46 "lexico_modified.l"
 { return SUSTANTIVO_COMPUESTO; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 47 "lexico.l"
+#line 47 "lexico_modified.l"
 { return SUSTANTIVO_SIMPLE; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 49 "lexico.l"
+#line 49 "lexico_modified.l"
 { return VERBO_DERIVADO; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 50 "lexico.l"
+#line 50 "lexico_modified.l"
 { return VERBO_DERIVADO; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 51 "lexico.l"
+#line 51 "lexico_modified.l"
 { return VERBO_CONJUGADO; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 52 "lexico.l"
+#line 52 "lexico_modified.l"
 { return VERBO_SIMPLE; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 54 "lexico.l"
+#line 54 "lexico_modified.l"
 { return ADJETIVO_DERIVADO; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 55 "lexico.l"
+#line 55 "lexico_modified.l"
 { return ADJETIVO_DERIVADO; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 56 "lexico.l"
+#line 56 "lexico_modified.l"
 { return ADJETIVO_DERIVADO; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 57 "lexico.l"
+#line 57 "lexico_modified.l"
 { return ADJETIVO_DERIVADO; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 58 "lexico.l"
+#line 58 "lexico_modified.l"
 { return ADJETIVO_SIMPLE; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 59 "lexico.l"
+#line 59 "lexico_modified.l"
 { return ADJETIVO_SIMPLE; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 61 "lexico.l"
+#line 61 "lexico_modified.l"
 { return ADVERBIO_DERIVADO; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 62 "lexico.l"
+#line 62 "lexico_modified.l"
 { return ADVERBIO_DERIVADO; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 64 "lexico.l"
+#line 64 "lexico_modified.l"
 { return PREPOSICION; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 65 "lexico.l"
+#line 65 "lexico_modified.l"
 { return CONJUNCION; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 66 "lexico.l"
+#line 66 "lexico_modified.l"
 { return DETERMINANTE; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 67 "lexico.l"
+#line 67 "lexico_modified.l"
 { return PRONOMBRE; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 68 "lexico.l"
+#line 68 "lexico_modified.l"
 {return VERBO_SER; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 69 "lexico.l"
+#line 69 "lexico_modified.l"
 {return VERBO_ESTAR; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 70 "lexico.l"
+#line 70 "lexico_modified.l"
 {return VERBO_PARECER; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 71 "lexico.l"
+#line 71 "lexico_modified.l"
 {return VERBO_IMPERATIVO; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 72 "lexico.l"
+#line 72 "lexico_modified.l"
 {return VERBO_PARTICIPIO; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 73 "lexico.l"
+#line 73 "lexico_modified.l"
 {return VERBO_IMPERSONAL; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 74 "lexico.l"
+#line 74 "lexico_modified.l"
 {return INTERROGATIVO; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 75 "lexico.l"
+#line 75 "lexico_modified.l"
 {return EXCLAMATIVO; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 76 "lexico.l"
+#line 76 "lexico_modified.l"
 {return DESIDERATIVO; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 77 "lexico.l"
+#line 77 "lexico_modified.l"
 {return DUBITATIVO; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 78 "lexico.l"
+#line 78 "lexico_modified.l"
 {return POR;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 81 "lexico.l"
+#line 81 "lexico_modified.l"
 { return PUNTO; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 82 "lexico.l"
+#line 82 "lexico_modified.l"
 { return INTERROGACION_ABRIR; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 83 "lexico.l"
+#line 83 "lexico_modified.l"
 { return INTERROGACION_CERRAR; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 84 "lexico.l"
+#line 84 "lexico_modified.l"
 { return EXCLAMACION_ABRIR; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 85 "lexico.l"
+#line 85 "lexico_modified.l"
 { return EXCLAMACION_CERRAR; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 87 "lexico.l"
+#line 87 "lexico_modified.l"
 ECHO;
 	YY_BREAK
-#line 1745 "lexico_vjulian.c"
+#line 1745 "lexico.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2747,7 +2747,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 87 "lexico.l"
+#line 87 "lexico_modified.l"
 
 
 extern puntoEncontrado;
