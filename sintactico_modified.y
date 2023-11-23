@@ -17,7 +17,7 @@ bool puntoEncontrado = false;
 
 S : Oracion Punto { 
        printf("Regla utilizada: S -> Oracion Punto ;\n"); 
-       };
+       }; | Oracion Punto S
 
 Oracion : Enunciativa
        { 
