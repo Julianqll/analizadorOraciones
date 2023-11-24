@@ -44,13 +44,16 @@ bool conjuncionEncontrado = false;
 
 %%
 
-S : Oracion Punto { 
-       printf("Regla utilizada: S -> Oracion Punto ;\n"); 
-       }; | Oracion Punto S
-
-Oracion : Enunciativa
+S : Oracion { 
+       printf("Regla utilizada: S -> Oracion ;\n"); 
+       }; | Oracion S
        { 
-       printf("Regla utilizada: Oracion -> Enunciativa ;\n"); 
+       printf("Regla utilizada: S -> Oracion S ;\n"); 
+       }
+
+Oracion : Enunciativa Punto
+       { 
+       printf("Regla utilizada: Oracion -> Enunciativa Punto;\n"); 
        }
         | Interrogativa
        { 
@@ -60,17 +63,17 @@ Oracion : Enunciativa
        { 
        printf("Regla utilizada: Oracion -> Exclamativa ;\n"); 
        }
-        | Exhortativa
+        | Exhortativa Punto
        { 
-       printf("Regla utilizada: Oracion -> Exhortativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Exhortativa Punto ;\n"); 
        }
-        | Desiderativa
+        | Desiderativa Punto
        { 
-       printf("Regla utilizada: Oracion -> Desiderativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Desiderativa Punto;\n"); 
        }
-        | Dubitativa
+        | Dubitativa Punto
        { 
-       printf("Regla utilizada: Oracion -> Dubitativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Dubitativa Punto ;\n"); 
        }
 	;
 

@@ -416,7 +416,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  41
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   93
+#define YYLAST   85
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  33
@@ -425,7 +425,7 @@ union yyalloc
 /* YYNRULES -- Number of rules.  */
 #define YYNRULES  51
 /* YYNRULES -- Number of states.  */
-#define YYNSTATES  74
+#define YYNSTATES  77
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
 #define YYUNDEFTOK  2
@@ -473,42 +473,42 @@ static const yytype_uint8 yytranslate[] =
    YYRHS.  */
 static const yytype_uint8 yyprhs[] =
 {
-       0,     0,     3,     6,    10,    12,    14,    16,    18,    20,
-      22,    24,    26,    30,    34,    37,    39,    43,    47,    53,
-      57,    60,    63,    66,    71,    74,    77,    79,    81,    83,
-      85,    87,    89,    91,    93,    95,    97,    99,   101,   103,
-     105,   107,   109,   112,   114,   116,   118,   121,   123,   125,
-     127,   129
+       0,     0,     3,     5,     8,    11,    13,    15,    18,    21,
+      24,    26,    28,    32,    36,    39,    41,    45,    49,    55,
+      59,    62,    65,    68,    73,    76,    79,    81,    83,    85,
+      87,    89,    91,    93,    95,    97,    99,   101,   103,   105,
+     107,   109,   111,   114,   116,   118,   120,   123,   125,   127,
+     129,   131
 };
 
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-      34,     0,    -1,    35,    57,    -1,    35,    57,    34,    -1,
-      36,    -1,    38,    -1,    39,    -1,    40,    -1,    41,    -1,
-      42,    -1,    44,    -1,    37,    -1,    45,    47,    52,    -1,
-      45,    49,    54,    -1,    48,    54,    -1,    43,    -1,    44,
-      22,    44,    -1,    23,    35,    24,    -1,    23,    27,    49,
-      45,    24,    -1,    25,    35,    26,    -1,    51,    54,    -1,
-      29,    54,    -1,    30,    35,    -1,    45,     8,    50,    53,
-      -1,    45,    49,    -1,     3,    46,    -1,    46,    -1,     7,
-      -1,     4,    -1,     5,    -1,     6,    -1,     8,    -1,     9,
-      -1,    10,    -1,    16,    -1,    11,    -1,    12,    -1,    14,
-      -1,    15,    -1,    13,    -1,    46,    -1,    55,    -1,    32,
-      45,    -1,    46,    -1,    55,    -1,    56,    -1,    21,    54,
-      -1,    17,    -1,    18,    -1,    19,    -1,    20,    -1,    31,
-      -1
+      34,     0,    -1,    35,    -1,    35,    34,    -1,    36,    57,
+      -1,    38,    -1,    39,    -1,    40,    57,    -1,    41,    57,
+      -1,    42,    57,    -1,    44,    -1,    37,    -1,    45,    47,
+      52,    -1,    45,    49,    54,    -1,    48,    54,    -1,    43,
+      -1,    44,    22,    44,    -1,    23,    35,    24,    -1,    23,
+      27,    49,    45,    24,    -1,    25,    35,    26,    -1,    51,
+      54,    -1,    29,    54,    -1,    30,    35,    -1,    45,     8,
+      50,    53,    -1,    45,    49,    -1,     3,    46,    -1,    46,
+      -1,     7,    -1,     4,    -1,     5,    -1,     6,    -1,     8,
+      -1,     9,    -1,    10,    -1,    16,    -1,    11,    -1,    12,
+      -1,    14,    -1,    15,    -1,    13,    -1,    46,    -1,    55,
+      -1,    32,    45,    -1,    46,    -1,    55,    -1,    56,    -1,
+      21,    54,    -1,    17,    -1,    18,    -1,    19,    -1,    20,
+      -1,    31,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,    47,    47,    49,    51,    55,    59,    63,    67,    71,
-      77,    81,    85,    89,    93,    97,   103,   109,   115,   123,
-     130,   135,   141,   147,   153,   158,   163,   167,   173,   178,
-     183,   189,   194,   199,   205,   211,   216,   221,   227,   233,
-     239,   243,   248,   254,   258,   262,   266,   272,   277,   282,
-     287,   293
+       0,    47,    47,    49,    54,    58,    62,    66,    70,    74,
+      80,    84,    88,    92,    96,   100,   106,   112,   118,   126,
+     133,   138,   144,   150,   156,   161,   166,   170,   176,   181,
+     186,   192,   197,   202,   208,   214,   219,   224,   230,   236,
+     242,   246,   251,   257,   261,   265,   269,   275,   280,   285,
+     290,   296
 };
 #endif
 
@@ -560,7 +560,7 @@ static const yytype_uint8 yyr1[] =
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     2,     3,     1,     1,     1,     1,     1,     1,
+       0,     2,     1,     2,     2,     1,     1,     2,     2,     2,
        1,     1,     3,     3,     2,     1,     3,     3,     5,     3,
        2,     2,     2,     4,     2,     2,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
@@ -574,44 +574,44 @@ static const yytype_uint8 yyr2[] =
 static const yytype_uint8 yydefact[] =
 {
        0,     0,    28,    29,    30,    27,    39,    34,     0,     0,
-       0,     0,     0,     0,     4,    11,     5,     6,     7,     8,
-       9,    15,    10,     0,    26,     0,     0,    25,     0,     0,
+       0,     0,     0,     2,     0,    11,     5,     6,     0,     0,
+       0,    15,    10,     0,    26,     0,     0,    25,     0,     0,
        0,    47,    48,    49,    50,     0,    43,    21,    44,    45,
-      22,     1,    51,     2,     0,    31,    32,    33,    35,    36,
-      37,     0,    24,    14,    20,     0,    17,    19,    46,     3,
-      16,     0,    38,     0,    40,    12,    41,    13,     0,    24,
-       0,    23,    18,    42
+      22,     1,     3,    51,     4,     7,     8,     9,     0,    31,
+      32,    33,    35,    36,    37,     0,    24,    14,    20,     0,
+      17,    19,    46,    16,     0,    38,     0,    40,    12,    41,
+      13,     0,    24,     0,    23,    18,    42
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
       -1,    12,    13,    14,    15,    16,    17,    18,    19,    20,
-      21,    22,    23,    24,    51,    25,    52,    63,    26,    65,
-      71,    37,    38,    39,    43
+      21,    22,    23,    24,    55,    25,    56,    66,    26,    68,
+      74,    37,    38,    39,    44
 };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -44
+#define YYPACT_NINF -39
 static const yytype_int8 yypact[] =
 {
-      41,    17,   -44,   -44,   -44,   -44,   -44,   -44,    13,    41,
-      55,    41,     7,   -21,   -44,   -44,   -44,   -44,   -44,   -44,
-     -44,   -44,   -11,    74,   -44,    55,    55,   -44,    -6,   -10,
-       2,   -44,   -44,   -44,   -44,    55,   -44,   -44,   -44,   -44,
-     -44,   -44,   -44,    41,    86,     0,   -44,   -44,   -44,   -44,
-     -44,    63,    55,   -44,   -44,    86,   -44,   -44,   -44,   -44,
-     -44,    -6,   -44,     1,   -44,   -44,   -44,   -44,     8,   -44,
-      86,   -44,   -44,   -44
+      43,     9,   -39,   -39,   -39,   -39,   -39,   -39,    13,    43,
+      57,    43,    11,    43,    -9,   -39,   -39,   -39,    -9,    -9,
+      -9,   -39,    10,    71,   -39,    57,    57,   -39,    16,     7,
+      -3,   -39,   -39,   -39,   -39,    57,   -39,   -39,   -39,   -39,
+     -39,   -39,   -39,   -39,   -39,   -39,   -39,   -39,     1,    24,
+     -39,   -39,   -39,   -39,   -39,    47,    57,   -39,   -39,     1,
+     -39,   -39,   -39,   -39,    16,   -39,    12,   -39,   -39,   -39,
+     -39,    17,   -39,     1,   -39,   -39,   -39
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -44,   -12,    44,   -44,   -44,   -44,   -44,   -44,   -44,   -44,
-     -44,    -7,   -43,    -1,   -44,   -44,   -26,   -44,   -44,   -44,
-     -44,   -22,    -2,   -44,   -44
+     -39,    32,    49,   -39,   -39,   -39,   -39,   -39,   -39,   -39,
+     -39,    19,   -38,    -1,   -39,   -39,   -27,   -39,   -39,   -39,
+     -39,   -23,    29,   -39,    51
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -621,30 +621,28 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-      27,    61,    55,    53,    54,    48,    49,    41,    50,    36,
-      42,    44,    68,    58,    56,    62,     1,     2,     3,     4,
-       5,     2,     3,     4,    36,    36,     6,    73,    57,     7,
-      67,    59,    72,    70,    36,    69,     8,    60,     9,     0,
-      28,     0,    10,    11,     1,     2,     3,     4,     5,    66,
-      64,    36,    29,    30,     6,    40,     0,     7,     0,     2,
-       3,     4,     0,     0,     8,     0,     9,     2,     3,     4,
-      10,    11,    31,    32,    33,    34,    35,     0,     0,     0,
-      31,    32,    45,    46,    47,    48,    49,     0,    50,     1,
-       2,     3,     4,     5
+      27,    59,    57,    58,     1,     2,     3,     4,     5,    36,
+      64,    41,    62,     2,     3,     4,     1,     2,     3,     4,
+       5,    71,    43,    61,    36,    36,     6,    52,    53,     7,
+      54,    60,    48,    70,    36,    76,     8,    72,     9,    65,
+      28,    75,    10,    11,    73,    42,     1,     2,     3,     4,
+       5,     2,     3,     4,    67,    36,     6,    29,    30,     7,
+      40,     2,     3,     4,    31,    32,     8,    63,     9,    45,
+      46,    47,    10,    11,    31,    32,    33,    34,    35,    49,
+      50,    51,    52,    53,    69,    54
 };
 
-static const yytype_int8 yycheck[] =
+static const yytype_uint8 yycheck[] =
 {
-       1,    44,    28,    25,    26,    11,    12,     0,    14,    10,
-      31,    22,    55,    35,    24,    15,     3,     4,     5,     6,
-       7,     4,     5,     6,    25,    26,    13,    70,    26,    16,
-      52,    43,    24,    32,    35,    61,    23,    44,    25,    -1,
-      27,    -1,    29,    30,     3,     4,     5,     6,     7,    51,
-      51,    52,     8,     9,    13,    11,    -1,    16,    -1,     4,
-       5,     6,    -1,    -1,    23,    -1,    25,     4,     5,     6,
-      29,    30,    17,    18,    19,    20,    21,    -1,    -1,    -1,
-      17,    18,     8,     9,    10,    11,    12,    -1,    14,     3,
-       4,     5,     6,     7
+       1,    28,    25,    26,     3,     4,     5,     6,     7,    10,
+      48,     0,    35,     4,     5,     6,     3,     4,     5,     6,
+       7,    59,    31,    26,    25,    26,    13,    11,    12,    16,
+      14,    24,    22,    56,    35,    73,    23,    64,    25,    15,
+      27,    24,    29,    30,    32,    13,     3,     4,     5,     6,
+       7,     4,     5,     6,    55,    56,    13,     8,     9,    16,
+      11,     4,     5,     6,    17,    18,    23,    48,    25,    18,
+      19,    20,    29,    30,    17,    18,    19,    20,    21,     8,
+       9,    10,    11,    12,    55,    14
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -655,10 +653,10 @@ static const yytype_uint8 yystos[] =
       29,    30,    34,    35,    36,    37,    38,    39,    40,    41,
       42,    43,    44,    45,    46,    48,    51,    46,    27,    35,
       35,    17,    18,    19,    20,    21,    46,    54,    55,    56,
-      35,     0,    31,    57,    22,     8,     9,    10,    11,    12,
-      14,    47,    49,    54,    54,    49,    24,    26,    54,    34,
-      44,    45,    15,    50,    46,    52,    55,    54,    45,    49,
-      32,    53,    24,    45
+      35,     0,    34,    31,    57,    57,    57,    57,    22,     8,
+       9,    10,    11,    12,    14,    47,    49,    54,    54,    49,
+      24,    26,    54,    44,    45,    15,    50,    46,    52,    55,
+      54,    45,    49,    32,    53,    24,    45
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1475,96 +1473,103 @@ yyreduce:
         case 2:
 #line 47 "sintactico_modified.y"
     { 
-       printf("Regla utilizada: S -> Oracion Punto ;\n"); 
+       printf("Regla utilizada: S -> Oracion ;\n"); 
+       ;}
+    break;
+
+  case 3:
+#line 50 "sintactico_modified.y"
+    { 
+       printf("Regla utilizada: S -> Oracion S ;\n"); 
        ;}
     break;
 
   case 4:
-#line 52 "sintactico_modified.y"
+#line 55 "sintactico_modified.y"
     { 
-       printf("Regla utilizada: Oracion -> Enunciativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Enunciativa Punto;\n"); 
        ;}
     break;
 
   case 5:
-#line 56 "sintactico_modified.y"
+#line 59 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Oracion -> Interrogativa ;\n"); 
        ;}
     break;
 
   case 6:
-#line 60 "sintactico_modified.y"
+#line 63 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Oracion -> Exclamativa ;\n"); 
        ;}
     break;
 
   case 7:
-#line 64 "sintactico_modified.y"
+#line 67 "sintactico_modified.y"
     { 
-       printf("Regla utilizada: Oracion -> Exhortativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Exhortativa Punto ;\n"); 
        ;}
     break;
 
   case 8:
-#line 68 "sintactico_modified.y"
+#line 71 "sintactico_modified.y"
     { 
-       printf("Regla utilizada: Oracion -> Desiderativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Desiderativa Punto;\n"); 
        ;}
     break;
 
   case 9:
-#line 72 "sintactico_modified.y"
+#line 75 "sintactico_modified.y"
     { 
-       printf("Regla utilizada: Oracion -> Dubitativa ;\n"); 
+       printf("Regla utilizada: Oracion -> Dubitativa Punto ;\n"); 
        ;}
     break;
 
   case 10:
-#line 78 "sintactico_modified.y"
+#line 81 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Enunciativa -> Simple ;\n"); 
        ;}
     break;
 
   case 11:
-#line 82 "sintactico_modified.y"
+#line 85 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Enunciativa -> Compuesta ;\n"); 
        ;}
     break;
 
   case 12:
-#line 86 "sintactico_modified.y"
+#line 89 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Enunciativa -> Sujeto VerbCopulativo Atributo ;\n"); 
        ;}
     break;
 
   case 13:
-#line 90 "sintactico_modified.y"
+#line 93 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Enunciativa -> Sujeto Verbo Complemento ;\n"); 
        ;}
     break;
 
   case 14:
-#line 94 "sintactico_modified.y"
+#line 97 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Enunciativa -> VerbImpersonal Complemento ;\n"); 
        ;}
     break;
 
   case 15:
-#line 98 "sintactico_modified.y"
+#line 101 "sintactico_modified.y"
     { 
        printf("Regla utilizada: Enunciativa -> Pasiva ;\n"); 
        ;}
     break;
 
   case 16:
-#line 104 "sintactico_modified.y"
+#line 107 "sintactico_modified.y"
     { 
               conjuncionEncontrado = true;
               printf("Regla utilizada: Compuesta -> Simple CONJUNCION Simple ;\n");
@@ -1572,7 +1577,7 @@ yyreduce:
     break;
 
   case 17:
-#line 110 "sintactico_modified.y"
+#line 113 "sintactico_modified.y"
     { 
               interrogacionAbrirEncontrado = true;
               interrogacionCerrarEncontrado = true;
@@ -1581,7 +1586,7 @@ yyreduce:
     break;
 
   case 18:
-#line 116 "sintactico_modified.y"
+#line 119 "sintactico_modified.y"
     {
               interrogacionAbrirEncontrado = true;
               interrogativoEncontrado = true;
@@ -1591,7 +1596,7 @@ yyreduce:
     break;
 
   case 19:
-#line 124 "sintactico_modified.y"
+#line 127 "sintactico_modified.y"
     { 
               exclamacionAbrirEncontrado = true;
               exclamacionCerrarEncontrado = true;
@@ -1600,14 +1605,14 @@ yyreduce:
     break;
 
   case 20:
-#line 131 "sintactico_modified.y"
+#line 134 "sintactico_modified.y"
     { 
               printf("Regla utilizada: Exhortativa -> VerboImperativo Complemento ;\n"); 
        ;}
     break;
 
   case 21:
-#line 136 "sintactico_modified.y"
+#line 139 "sintactico_modified.y"
     { 
               desiderativoEncontrado = true;       
               printf("Regla utilizada: Desiderativa -> DESIDERATIVO Complemento ;\n"); 
@@ -1615,7 +1620,7 @@ yyreduce:
     break;
 
   case 22:
-#line 142 "sintactico_modified.y"
+#line 145 "sintactico_modified.y"
     { 
               dubitativoEncontrado = true;
               printf("Regla utilizada: Dubitativa -> DUBITATIVO Oracion ;\n"); 
@@ -1623,7 +1628,7 @@ yyreduce:
     break;
 
   case 23:
-#line 148 "sintactico_modified.y"
+#line 151 "sintactico_modified.y"
     { 
               verboSerEncontrado = true;
               printf("Regla utilizada: Pasiva -> Sujeto VERBO_SER Participio ComplementoPasivo ;\n");
@@ -1631,14 +1636,14 @@ yyreduce:
     break;
 
   case 24:
-#line 154 "sintactico_modified.y"
+#line 157 "sintactico_modified.y"
     {
                printf("Regla utilizada: Simple -> Sujeto Verbo ;\n"); 
        ;}
     break;
 
   case 25:
-#line 159 "sintactico_modified.y"
+#line 162 "sintactico_modified.y"
     { 
               determinanteEncontrado = true;
               printf("Regla utilizada: Sujeto -> DETERMINANTE Sustantivo ;\n"); 
@@ -1646,14 +1651,14 @@ yyreduce:
     break;
 
   case 26:
-#line 164 "sintactico_modified.y"
+#line 167 "sintactico_modified.y"
     { 
               printf("Regla utilizada: Sujeto -> Sustantivo;\n"); 
        ;}
     break;
 
   case 27:
-#line 168 "sintactico_modified.y"
+#line 171 "sintactico_modified.y"
     { 
               pronombreEncontrado = true;
               printf("Regla utilizada: Sujeto -> PRONOMBRE ;\n"); 
@@ -1661,7 +1666,7 @@ yyreduce:
     break;
 
   case 28:
-#line 174 "sintactico_modified.y"
+#line 177 "sintactico_modified.y"
     {
               sustantivoSimpleEncontrado = true;
               printf("Regla utilizada: Sustantivo -> SUSTANTIVO_SIMPLE ;\n"); 
@@ -1669,7 +1674,7 @@ yyreduce:
     break;
 
   case 29:
-#line 179 "sintactico_modified.y"
+#line 182 "sintactico_modified.y"
     { 
               sustantivoCompuestoEncontrado = true;
               printf("Regla utilizada: Sustantivo -> SUSTANTIVO_COMPUESTO ;\n");
@@ -1677,7 +1682,7 @@ yyreduce:
     break;
 
   case 30:
-#line 184 "sintactico_modified.y"
+#line 187 "sintactico_modified.y"
     {
               sustantivoDerivadoEncontrado = true;  
               printf("Regla utilizada: Sustantivo -> SUSTANTIVO_DERIVADO ;\n"); 
@@ -1685,7 +1690,7 @@ yyreduce:
     break;
 
   case 31:
-#line 190 "sintactico_modified.y"
+#line 193 "sintactico_modified.y"
     { 
               verboSerEncontrado = true;  
               printf("Regla utilizada: VerbCopulativo -> VERBO_SER ;\n"); 
@@ -1693,7 +1698,7 @@ yyreduce:
     break;
 
   case 32:
-#line 195 "sintactico_modified.y"
+#line 198 "sintactico_modified.y"
     { 
               verboEstarEncontrado = true;  
               printf("Regla utilizada: VerbCopulativo -> VERBO_ESTAR ;\n"); 
@@ -1701,7 +1706,7 @@ yyreduce:
     break;
 
   case 33:
-#line 200 "sintactico_modified.y"
+#line 203 "sintactico_modified.y"
     { 
               verboParecerEncontrado = true;  
               printf("Regla utilizada: VerbCopulativo -> VERBO_PARECER ;\n"); 
@@ -1709,7 +1714,7 @@ yyreduce:
     break;
 
   case 34:
-#line 206 "sintactico_modified.y"
+#line 209 "sintactico_modified.y"
     { 
               verboImpersonalEncontrado = true;  
               printf("Regla utilizada: VerbImpersonal -> VERBO_IMPERSONAL ;\n"); 
@@ -1717,7 +1722,7 @@ yyreduce:
     break;
 
   case 35:
-#line 212 "sintactico_modified.y"
+#line 215 "sintactico_modified.y"
     { 
               verboSimpleEncontrado = true;  
               printf("Regla utilizada: Verbo -> VERBO_SIMPLE ;\n"); 
@@ -1725,7 +1730,7 @@ yyreduce:
     break;
 
   case 36:
-#line 217 "sintactico_modified.y"
+#line 220 "sintactico_modified.y"
     { 
               verboConjugadoEncontrado = true;  
               printf("Regla utilizada: Verbo -> VERBO_CONJUGADO ;\n"); 
@@ -1733,7 +1738,7 @@ yyreduce:
     break;
 
   case 37:
-#line 222 "sintactico_modified.y"
+#line 225 "sintactico_modified.y"
     {       
               verboDerivadoEncontrado = true;  
               printf("Regla utilizada: Verbo -> VERBO_DERIVADO ;\n"); 
@@ -1741,7 +1746,7 @@ yyreduce:
     break;
 
   case 38:
-#line 228 "sintactico_modified.y"
+#line 231 "sintactico_modified.y"
     { 
               verboParticipioEncontrado = true;  
               printf("Regla utilizada: Participio -> VERBO_PARTICIPIO ;\n"); 
@@ -1749,7 +1754,7 @@ yyreduce:
     break;
 
   case 39:
-#line 234 "sintactico_modified.y"
+#line 237 "sintactico_modified.y"
     {
               verboImperativoEncontrado = true;
               printf("Regla utilizada: VerboImperativo -> VERBO_IMPERATIVO ;\n");
@@ -1757,21 +1762,21 @@ yyreduce:
     break;
 
   case 40:
-#line 240 "sintactico_modified.y"
+#line 243 "sintactico_modified.y"
     {      
               printf("Regla utilizada: Atributo -> Sustantivo;\n"); 
        ;}
     break;
 
   case 41:
-#line 244 "sintactico_modified.y"
+#line 247 "sintactico_modified.y"
     { 
               printf("Regla utilizada: Atributo -> Adjetivo ;\n"); 
        ;}
     break;
 
   case 42:
-#line 249 "sintactico_modified.y"
+#line 252 "sintactico_modified.y"
     {               
               porEncontrado = true;
               printf("Regla utilizada: ComplementoPasivo -> POR Sujeto ;\n"); 
@@ -1779,28 +1784,28 @@ yyreduce:
     break;
 
   case 43:
-#line 255 "sintactico_modified.y"
+#line 258 "sintactico_modified.y"
     { 
               printf("Regla utilizada: Complemento -> Sustantivo ;\n"); 
        ;}
     break;
 
   case 44:
-#line 259 "sintactico_modified.y"
+#line 262 "sintactico_modified.y"
     {      
               printf("Regla utilizada: Complemento -> Adjetivo ;\n"); 
        ;}
     break;
 
   case 45:
-#line 263 "sintactico_modified.y"
+#line 266 "sintactico_modified.y"
     { 
               printf("Regla utilizada: Complemento -> Adverbio ;\n"); 
        ;}
     break;
 
   case 46:
-#line 267 "sintactico_modified.y"
+#line 270 "sintactico_modified.y"
     { 
               preposicionEncontrado = true;
               printf("Regla utilizada: Verbo -> PREPOSICION Complemento ;\n"); 
@@ -1808,7 +1813,7 @@ yyreduce:
     break;
 
   case 47:
-#line 273 "sintactico_modified.y"
+#line 276 "sintactico_modified.y"
     { 
               adjetivoSimpleEncontrado = true;
               printf("Regla utilizada: Adjetivo -> ADJETIVO_SIMPLE ;\n"); 
@@ -1816,7 +1821,7 @@ yyreduce:
     break;
 
   case 48:
-#line 278 "sintactico_modified.y"
+#line 281 "sintactico_modified.y"
     { 
               adjetivoDerivadoEncontrado = true;
               printf("Regla utilizada: Adjetivo -> ADJETIVO_DERIVADO ;\n"); 
@@ -1824,7 +1829,7 @@ yyreduce:
     break;
 
   case 49:
-#line 283 "sintactico_modified.y"
+#line 286 "sintactico_modified.y"
     { 
               adverbioSimpleEncontrado = true;
               printf("Regla utilizada: Adverbio -> ADVERBIO_SIMPLE ;\n"); 
@@ -1832,7 +1837,7 @@ yyreduce:
     break;
 
   case 50:
-#line 288 "sintactico_modified.y"
+#line 291 "sintactico_modified.y"
     {
               adverbioDerivadoEncontrado = true;
               printf("Regla utilizada: Adverbio -> ADVERBIO_DERIVADO  ;\n"); 
@@ -1840,13 +1845,13 @@ yyreduce:
     break;
 
   case 51:
-#line 293 "sintactico_modified.y"
+#line 296 "sintactico_modified.y"
     { puntoEncontrado = true; printf("Regla utilizada: Punto -> PUNTO;\n"); ;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1850 "parser.c"
+#line 1855 "parser.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
